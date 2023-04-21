@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Test CH</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: Inter;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        font-size: 16px;
+      }
+
+      .ch-test {
+        display: flex;
+        gap: 2rem;
+        margin-top: 1rem;
+      }
+      .ch-test pre {
+        border: 1rem solid #dedede;
+        width: 200px;
+        background: #dedede;
+      }
+      .ch-test p {
+        width: 60ch;
+        outline: 1px solid red;
+      }
+      .regular {
+        font-weight: 400;
+      }
+      .medium {
+        font-weight: 500;
+      }
+      .semi-bold {
+        font-weight: 600;
+      }
+      .bold {
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="ch-test">
+        <p class="regular">000000000000000000000000000000000000000000000000000000000000</p>
+      </div>
+      <div class="ch-test">
+        <p class="regular">
+          Import CSV, TSV, JSON, and XML files from Amazon S3 or Google Cloud Storage into file
+          groups, then apply generators to de-identify the file data.
+        </p>
+      </div>
+
+      <div class="ch-test">
+        <p class="medium">000000000000000000000000000000000000000000000000000000000000</p>
+      </div>
+      <div class="ch-test medium">
+        <p class="medium">
+          Import CSV, TSV, JSON, and XML files from Amazon S3 or Google Cloud Storage into file
+          groups, then apply generators to de-identify the file data.
+        </p>
+      </div>
+      <div class="ch-test">
+        <p class="bold">000000000000000000000000000000000000000000000000000000000000</p>
+      </div>
+      <div class="ch-test">
+        <p class="bold">
+          Import CSV, TSV, JSON, and XML files from Amazon S3 or Google Cloud Storage into file
+          groups, then apply generators to de-identify the file data.
+        </p>
+      </div>
+    </div>
+    <script>
+      for (const test of document.getElementsByClassName("ch-test")) {
+        const p = test.querySelector("p");
+        const styles = window.getComputedStyle(p);
+        const pre = document.createElement("pre");
+        pre.textContent = `font:   ${styles.getPropertyValue("font-family")}
+weight: ${styles.getPropertyValue("font-weight")}
+width:  ${p.getBoundingClientRect().width}px
+`;
+        test.prepend(pre);
+      }
+    </script>
+  </body>
+</html>

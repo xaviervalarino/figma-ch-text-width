@@ -1,0 +1,1 @@
+{"api":"1.0.0","editorType":["figma"],"id":"text-ch","name":"CH Text Width","main":"build/main.js","parameters":[{"key":"ch","name":"width","allowFreeform":true}]}

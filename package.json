@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "@create-figma-plugin/utilities": "^2.3.0"
+  },
+  "devDependencies": {
+    "@create-figma-plugin/build": "^2.3.0",
+    "@create-figma-plugin/tsconfig": "^2.3.0",
+    "@figma/plugin-typings": "1.57.1",
+    "typescript": ">=4"
+  },
+  "scripts": {
+    "build": "build-figma-plugin --typecheck --minify",
+    "watch": "build-figma-plugin --typecheck --watch"
+  },
+  "figma-plugin": {
+    "editorType": [
+      "figma"
+    ],
+    "id": "text-ch",
+    "name": "CH Text Width",
+    "main": "src/main.ts",
+    "parameters": [
+      {
+        "key": "ch",
+        "name": "width",
+        "allowFreeform": true
+      }
+    ]
+  }
+}
